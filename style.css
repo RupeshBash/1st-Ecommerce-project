@@ -1,0 +1,926 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main Container Styling */
+.main-container {
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Logo Styling */
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+header .logo h1 {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+/* Navbar Styling */
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff5a5f;  /* Color change on hover */
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Hover effect on the entire nav */
+nav {
+    transition: background-color 0.3s ease;
+}
+
+nav:hover {
+    background-color: #444;
+}
+
+/* Cart Icon Styling */
+header img[src="images/cart.png"] {
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+header img[src="images/cart.png"]:hover {
+    filter: brightness(1.5);
+    transform: scale(1.1);
+}
+
+/* Menu Icon Styling */
+header img[src="images/menu.jfif"] {
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+header img[src="images/menu.jfif"]:hover {
+    filter: brightness(1.5);
+    transform: scale(1.1);
+}
+
+/* ------------------------- Mobile Responsiveness ------------------------- */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Adjusting the navigation for mobile */
+    nav ul {
+        display: none; /* Initially hide the navigation on small screens */
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    /* Show the menu icon when nav is hidden */
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    /* Display nav items when menu icon is clicked */
+    .menu-icon.open + nav ul {
+        display: flex;
+    }
+    
+    /* Styling the cart and menu icons for mobile */
+    header img {
+        margin: 10px 0;
+    }
+}
+
+/* For even smaller screens */
+@media (max-width: 480px) {
+    header .logo h1 {
+        font-size: 1.5em; /* Adjust logo text size */
+    }
+
+    nav ul li a {
+        font-size: 1em; /* Smaller font size for links */
+    }
+
+    header img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+/****************************************intro Section containing the text and image ********************************/
+.intro {
+    display: flex; /* Creates a flex container for side-by-side layout */
+    justify-content: center; /* Centers the content horizontally */
+    align-items: flex-start; /* Aligns the items to the top */
+    padding: 40px; /* Adds padding around the section */
+    min-height: 50vh; /* Ensures the section takes at least 50% of the screen height */
+    flex-wrap: wrap; /* Allows the content to wrap on smaller screens */
+}
+
+.text-content {
+    flex: 1; /* Ensures the text container takes up equal space */
+    padding-right: 20px; /* Adds space between text and image */
+    text-align: center; /* Centers the text content on smaller screens */
+}
+
+.text-content h2 {
+    font-size: 3em; /* Increases the heading size for better emphasis */
+    margin-bottom: 15px; /* Adds space below the heading */
+    color: #754345; /* Color effect for the heading */
+    text-transform: uppercase; /* Makes the heading all uppercase */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.text-content h2:hover {
+    color: #ff8a80; /* Lightens the heading color on hover */
+}
+
+.text-content p {
+    font-size: 1em; /* Smaller font size for the paragraph */
+    color: #666; /* Lighter gray color for the paragraph */
+    line-height: 1.6; /* Increases line spacing for better readability */
+    font-family: 'Brush Script MT', cursive, sans-serif; /* Using cursive font family */
+    font-style: italic; /* Adds italic style to give it a handwritten touch */
+}
+
+/* Container for the image */
+.image-content {
+    flex: 1; /* Ensures the image container takes equal space */
+    position: relative; /* Allows positioning of the image inside the container */
+    top: 20px; /* Moves the image slightly up */
+    margin-left: 20px; /* Adds some space between the image and text */
+    text-align: center; /* Centers the image on smaller screens */
+}
+
+.image-content img {
+    width: 90%; /* Makes the image smaller */
+    height: auto; /* Maintains the aspect ratio of the image */
+    border-radius: 10px; /* Optional: Adds rounded corners to the image */
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.image-content img:hover {
+    transform: scale(1.05); /* Slightly enlarges the image on hover */
+}
+
+/* Styling the "Explore Now" button */
+.explore-button {
+    display: inline-block; /* Makes the button inline but allows for block-level styling */
+    margin-top: 20px; /* Adds space above the button */
+    padding: 10px 20px; /* Adds padding inside the button */
+    font-size: 1.2em; /* Font size for the button text */
+    color: #fff; /* Button text color */
+    background-color: #ff5a5f; /* Button background color */
+    text-decoration: none; /* Removes underline from the link */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition effects */
+}
+
+.explore-button:hover {
+    background-color: #ff8a80; /* Lightens the button color on hover */
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .intro {
+        flex-direction: column; /* Stacks the content vertically */
+        text-align: center; /* Centers the text and image */
+        padding: 20px; /* Reduces padding for smaller screens */
+    }
+
+    .text-content {
+        padding-right: 0; /* Removes the space between text and image */
+        padding-bottom: 20px; /* Adds space below text */
+    }
+
+    .text-content h2 {
+        font-size: 2.2em; /* Adjust font size for smaller screens */
+    }
+
+    .text-content p {
+        font-size: 1.1em; /* Adjust font size for better readability */
+    }
+
+    .image-content {
+        margin-left: 0; /* Removes left margin on smaller screens */
+        top: 0; /* Resets the image position */
+        width: 100%; /* Makes the image take full width on smaller screens */
+    }
+
+    .image-content img {
+        width: 80%; /* Reduces the image size slightly */
+        margin: 0 auto; /* Centers the image */
+    }
+
+    .explore-button {
+        font-size: 1.1em; /* Adjusts button size */
+        padding: 12px 24px; /* Makes the button slightly bigger */
+    }
+}
+
+/************************************** Featured Categories Section Styling **************************************/
+.categories {
+    padding: 40px 0;
+    text-align: center;
+    background-color: #f7f7f7;
+}
+
+.categories h2 {
+    font-size: 2.5em;
+    color: #754345;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.category-columns {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.category {
+    flex: 1 1 30%; /* Ensures each category takes up 30% of the space */
+    max-width: 250px; /* Limits max width */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.category img {
+    width: 100%; /* Makes image fill the category box */
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.category p {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.category:hover p {
+    color: #ff5a5f;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    .category-columns {
+        justify-content: center; /* Center-aligns the categories on smaller screens */
+    }
+
+    .category {
+        flex: 1 1 45%; /* Each category takes up 45% of the container on medium screens */
+        max-width: 200px; /* Reduces max-width */
+    }
+}
+
+@media (max-width: 480px) {
+    .category {
+        flex: 1 1 100%; /* Each category takes up the full width on very small screens */
+        max-width: none; /* Removes max-width */
+    }
+}
+
+/***********************************************Featured Product Section styling ************************************************/
+.featured-products {
+    padding: 40px 0;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.featured-products h2 {
+    font-size: 2.5em;
+    color: #754345;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Flex layout for product items */
+.small-container .columns {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.item {
+    flex: 1 1 30%; /* Ensures each item takes up 30% of the container width */
+    max-width: 250px; /* Sets a max width for the items */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.item img {
+    width: 100%; /* Makes the image fill the item container */
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.item h3, .item p {
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.item:hover h3, .item:hover p {
+    color: #ff5a5f;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    .small-container .columns {
+        justify-content: center; /* Center-aligns the items */
+    }
+
+    .item {
+        flex: 1 1 45%; /* Items take up 45% of the container width on medium screens */
+        max-width: 200px; /* Reduces max-width */
+    }
+}
+
+@media (max-width: 480px) {
+    .item {
+        flex: 1 1 100%; /* Items take up 100% of the container width on small screens */
+        max-width: none; /* Removes max-width */
+    }
+}
+
+/******************************************* Latest Products Section Styling **********************************/
+.latest-products {
+    padding: 40px 0;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+.latest-products h2 {
+    font-size: 2.5em;
+    color: #754345;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Container layout for 2x2 products */
+.latest-products .small-container .columns {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap; /* Ensures that items wrap to the next line */
+    padding: 20px 0;
+}
+
+.latest-products .small-container .columns + .columns {
+    margin-top: 20px; /* Adds spacing between the two rows */
+}
+
+.latest-products .item {
+    flex: 1 1 45%; /* Ensures each item takes up about 45% of the container width */
+    max-width: 400px; /* Prevents items from becoming too large */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.latest-products .item img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.latest-products .item h3, .latest-products .item p {
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.latest-products .item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.latest-products .item:hover h3, .latest-products .item:hover p {
+    color: #ff5a5f;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    .latest-products .item {
+        flex: 1 1 45%; /* Each item takes 45% width on medium screens */
+        max-width: 200px; /* Reduces the max-width for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .latest-products .item {
+        flex: 1 1 100%; /* Each item takes full width on small screens */
+        max-width: none; /* Removes max-width */
+    }
+}
+
+/*************************************** Exclusive Product Section Styling **************************************/
+.exclusive-product {
+    background-color: #f9f9f9; /* Light color background to suit the website theme */
+    padding: 40px 0;
+    text-align: center;
+}
+
+.exclusive-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* Space between the image and text */
+    flex-wrap: wrap; /* Makes the layout responsive */
+}
+
+.exclusive-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for the image */
+}
+
+.exclusive-text {
+    max-width: 500px;
+    text-align: left;
+}
+
+.exclusive-text h2 {
+    font-size: 2.5em;
+    color: #754345;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.exclusive-text .price {
+    font-size: 1.5em;
+    color: #ff5a5f; /* Price color to make it stand out */
+    margin-bottom: 20px;
+}
+
+.exclusive-text .description {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.buy-now {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff5a5f; /* Button color */
+    color: #fff;
+    font-size: 1.2em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.buy-now:hover {
+    background-color: #ff8a80; /* Lighter color on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Responsive Design for Exclusive Product Section */
+@media (max-width: 768px) {
+    .exclusive-container {
+        flex-direction: column; /* Stack the image and text vertically on smaller screens */
+        gap: 20px; /* Reduce gap between image and text */
+    }
+
+    .exclusive-text {
+        max-width: 100%; /* Allow text container to take full width */
+        text-align: center; /* Center text on smaller screens */
+    }
+
+    .exclusive-text h2 {
+        font-size: 2em; /* Reduce heading size on smaller screens */
+    }
+
+    .exclusive-text .price {
+        font-size: 1.3em; /* Reduce price size on smaller screens */
+    }
+
+    .exclusive-text .description {
+        font-size: 1.1em; /* Reduce description text size */
+    }
+
+    .buy-now {
+        font-size: 1em; /* Make the button font size smaller */
+    }
+}
+
+/********************************************** Testimonial Section Styling ************************************/
+.testimonial {
+    padding: 40px 0;
+    background-color: #f9f9f9; /* Light background color */
+    text-align: center;
+}
+
+.testimonial h2 {
+    font-size: 2.5em;
+    color: #754345; /* Dark leather brown color */
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.testimonial-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap; /* Makes the layout responsive */
+    margin: 0 auto;
+    max-width: 1200px; /* Ensures the testimonial row doesn't stretch too wide */
+}
+
+.testimonial-column {
+    width: 30%; /* Adjust the width of each column */
+    padding: 10px;
+    box-sizing: border-box;
+    flex: 1 1 200px; /* Makes it responsive, allows column width to adjust */
+    text-align: center; /* Ensures the content is centered */
+}
+
+.testimonial-box {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Soft shadow around the box */
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out; /* Transition for hover effect */
+    cursor: pointer;
+}
+
+.testimonial-box:hover {
+    transform: translateY(-10px); /* Hover effect for slight movement */
+}
+
+.quote {
+    font-style: italic;
+    color: #d32f2f; /* Red color for the quote */
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.testimonial-img img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.2em;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.rating span {
+    color: #ffcc00; /* Yellow color for rating */
+    font-size: 1.5em;
+}
+
+/* Hover effect for the whole testimonial box */
+.testimonial-box:hover .quote {
+    color: #ff8a80; /* Slight change in color when hovering */
+}
+
+.testimonial-box:hover .rating span {
+    color: #ff5a5f; /* Highlight yellow color for rating on hover */
+}
+
+/* Responsive Design for Testimonial */
+@media (max-width: 768px) {
+    .testimonial-row {
+        flex-direction: column; /* Stack the columns vertically on smaller screens */
+        align-items: center;
+    }
+
+    .testimonial-column {
+        width: 100%; /* Full width on small screens */
+        margin-bottom: 20px;
+    }
+
+    .testimonial h2 {
+        font-size: 2em; /* Adjust font size for smaller screens */
+    }
+
+    .testimonial-box {
+        margin-bottom: 20px; /* Space out the testimonial boxes */
+    }
+}
+
+/************************************* Brand Logo Section *********************************************************/
+.brand-logos {
+    padding: 40px 0;
+    background-color: #f1f1f1; /* Light background to differentiate the section */
+    text-align: center;
+}
+
+.brand-logos h2 {
+    font-size: 2em;
+    color: #754345; /* Color similar to other headings */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Container for Logos */
+.logo-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* Each Logo Item */
+.logo-item {
+    width: 100px;
+    height: auto;
+    transition: filter 0.3s ease;
+}
+
+/* Logo images styling */
+.logo-item img {
+    width: 100%; /* Keeps logos uniform in size */
+    height: auto;
+    filter: grayscale(100%); /* Initial grayscale effect */
+    transition: filter 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Hover Effect for Logos */
+.logo-item:hover img {
+    filter: grayscale(0%); /* Full color on hover */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .logo-item {
+        width: 80px; /* Reduce logo size for medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-item {
+        width: 60px; /* Reduce logo size for smaller screens */
+    }
+}
+
+/**********************************************Footer Styling *************************************************/
+footer {
+    background-color: #333; 
+    color: #fff; 
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.footer-column {
+    flex: 1 1 200px;
+    margin: 20px;
+    min-width: 180px;
+}
+
+.footer h3 {
+    font-size: 1.2em;
+    color: #ffb3b3; 
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.footer p,
+.footer ul {
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
+.footer-logo {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.app-logos img {
+    width: 120px;
+    margin-right: 10px;
+}
+
+.footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 8px;
+}
+
+.footer ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer ul li a:hover {
+    color: #ffb3b3;
+}
+
+.social-links img {
+    width: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 15px;
+    font-size: 0.8em;
+    border-top: 1px solid #555;
+    margin-top: 20px;
+    color: #bbb;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/**********( Responsive Design for Footer ) */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px; /* Reduce gap between columns */
+    }
+    .footer-column {
+        text-align: center;
+        margin: 10px 0; /* Adjust margin to reduce height */
+    }
+    .app-logos img {
+        width: 100px;
+        margin-right: 5px; /* Reduce margin between app logos */
+    }
+    .footer-logo {
+        width: 80px; /* Adjust logo size for mobile */
+    }
+    .footer h3 {
+        font-size: 1.1em; /* Slightly reduce heading size */
+    }
+    .footer p {
+        font-size: 0.85em; /* Adjust paragraph font size */
+    }
+    .footer ul li {
+        margin-bottom: 5px; /* Reduce spacing between list items */
+    }
+    .social-links img {
+        width: 18px; /* Reduce social media icon size */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-logo {
+        width: 70px; /* Further reduce logo size on very small screens */
+    }
+    .app-logos img {
+        width: 90px; /* Adjust app logos for very small screens */
+    }
+}
+
+/**************************************** General styles for menu icon *******************************************/
+.menu-icon {
+    cursor: pointer;
+    display: none;
+}
+
+/* Show menu icon and hide nav items on smaller screens */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: inline-block;
+    }
+
+    /* Initially hide the nav menu */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background-color: #333;
+        padding: 20px;
+    }
+
+    /* Show nav menu when menu icon is clicked (class will be toggled with JS) */
+    nav ul.show {
+        display: flex;
+    }
+}
+
+
+/*******************************************Base styling for the navigation **********************************/
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    /* Hide the nav menu by default */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #fff; /* Adjust as needed */
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Display nav when menu is open */
+    nav ul.show {
+        display: flex;
+    }
+
+    /* Style the menu icon */
+    .menu-icon {
+        display: inline;
+        cursor: pointer;
+    }
+}
